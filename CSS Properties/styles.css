@@ -1,0 +1,410 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+nav.navbar {
+  width: 100%;
+  height: 72px;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+nav.navbar ul {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0 32px;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.navbar li {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+nav.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+nav.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: #4f46e5;
+  transition: width 0.25s ease;
+}
+
+nav.navbar a:hover::after {
+  width: 100%;
+  cursor: pointer;
+}
+
+nav.navbar li.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  left: 0%;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20px;
+}
+
+footer .footer-element {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  color: #e5e7eb;
+  display: flex;
+}
+
+footer .footer-element a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  text-shadow: none;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-element label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.2px;
+  font-family: 'Inter', sans-serif;
+}
+
+input[type="number"], select.options {
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+input[type="number"]:focus,
+select.options:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: none;
+}
+
+.form-button {
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 700;
+  background: #4f46e5;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.form-button:hover {
+  background: linear-gradient(90deg, #4f46e5, #6d28d9);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+form {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 36px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: #0f172a;
+  border-radius: 14px;
+  background-color: #ffffff;
+  overflow: hidden;
+  opacity: 1;
+  animation: none;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+}
+
+@keyframes FadeinSmooth {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#summary-body {
+  font-weight: 600;
+}
+
+.summary-table thead {
+  background-color: #f1f5f9;
+}
+
+.summary-table th,
+.summary-table td {
+  border: 1px solid #e5e7eb;
+  color: #0f172a;
+  padding: 14px;
+  text-transform: none;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.summary-table .income {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.summary-table .expense {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.delete-button {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.summary-table .expense::before { content: "-$"; }
+.summary-table .income::before { content: "+$"; }
+.summary-table .total::before { content: "$"; }
+
+.summary-table .td-element:hover {
+  background-color: #f1f5f9;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-buttons button {
+  background-color: #4f46e5;
+  justify-content: center;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pagination-buttons button:hover {
+  background-color: #4338ca;
+}
+
+#incomeExpenseBarChart {
+  margin: 0;
+  max-width: 500px;
+}
+
+.middle-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+#expensePieChart {
+  margin: 0;
+  max-width: 350px;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+canvas {
+  display: block;
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+  background-color: #ffffff;
+  transition: none;
+}
+
+canvas:hover {
+  transform: none;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+}
+
+.Net-income {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.Net-income .income {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.Net-income .expense {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.Income-Expense {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.Income-Expense h2 {
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding: 20px 24px;                /* adds spacing inside the card */
+  background-color: #f1f3f7;         /* soft card background instead of pure white */
+  border: 5px solid #2011c4;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 30px;
+}
+
+.Numbers {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.Numbers h2 {
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-right: 15px;
+}
+
+.Numbers h2.income {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.Numbers h2.expense {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.data-table {
+  width: 40%;
+  border-collapse: unset;
+  border-spacing: 0 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: #0f172a;
+  border-radius: 14px;
+  background-color: #ffffff;
+  overflow: hidden;
+  opacity: 1;
+  animation: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.08);
+}
+
+#data-body {
+  font-weight: 600;
+}
+
+.data-table th,
+.data-table td {
+  color: #0f172a;
+  padding: 12px;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.data-table .income {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.data-table .expense {
+  color: #dc2626;
+  font-weight: 700;
+}
+
