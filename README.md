@@ -19,4 +19,15 @@ A simple web application to track your budget, record transactions, and view sum
 ```bash
 git clone https://github.com/danieldandrea489/budget-tracker.git
 cd budget-tracker
----
+```
+### 2. Open in Visual Studio or other IDE
+Open index.html to start using the app.
+```bash
+budget-tracker/
+├── CSS Properties/        # CSS styling files
+├── Script Sources/        # JavaScript logic files
+├── index.html             # Home page
+├── transactions.html      # Add/view transactions
+├── summaries.html         # Spending summaries
+└── README.md              # This file
+```
