@@ -19,3 +19,4 @@ A simple web application to track your budget, record transactions, and view sum
 ```bash
 git clone https://github.com/danieldandrea489/budget-tracker.git
 cd budget-tracker
+---
