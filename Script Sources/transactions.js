@@ -1,7 +1,5 @@
 import { Chart, registerables } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/+esm';
 Chart.register(...registerables);
-
-// Map for converting month numbers to names (optional, but useful)
 const monthMap = {
     "01": "January",
     "02": "February",
@@ -18,24 +16,17 @@ const monthMap = {
 };
 
 
-// DOM Elements
 const MonthButton = document.getElementById('month');
 const YearButton = document.getElementById('year');
 
-// Load transactions from localStorage
 const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
-// Global chart instances
 let incomeExpenseChart;
 let expenseCategoryChart;
 
-// Update charts when dropdowns change
 MonthButton.addEventListener('change', updateChartData);
 YearButton.addEventListener('change', updateChartData);
 
-// -------------------
-// Main update function
-// -------------------
 function updateChartData() {
     const selectedMonth = MonthButton.value; // '01', '02', etc.
     const selectedYear = YearButton.value;   // '2026', '2025', etc.
@@ -46,7 +37,7 @@ function updateChartData() {
         if (expenseCategoryChart) expenseCategoryChart.destroy();
         return;
     }
-    // Filter transactions by selected month/year
+
     const filteredTransactions = transactions.filter(transaction => {
         if (!transaction.date) return false;
 
@@ -59,14 +50,11 @@ function updateChartData() {
         return paddedMonth === selectedMonth && year === selectedYear;
     });
 
-    // Render charts
+  
     renderIncomeExpenseChart(filteredTransactions);
     renderExpenseCategoryPieChart(filteredTransactions);
 }
 
-// -------------------
-// Income / Expense Bar Chart
-// -------------------
 
 function CalculateNetIncome(data1, data2) {
  let netIncome = document.querySelector('.Net-income');
@@ -149,7 +137,7 @@ function renderIncomeExpenseChart(data) {
     CalculateIncomeExpense(incomeData,expenseData);
     const ctx = document.getElementById('incomeExpenseBarChart').getContext('2d');
 
-    // Destroy previous chart to avoid duplicates
+ 
     if (incomeExpenseChart) {
         incomeExpenseChart.destroy();
     }
@@ -244,9 +232,6 @@ function renderExpenseCategoryPieChart(data) {
     });
 }
 
-// -------------------
-// Initialize charts if month/year already selected
-// -------------------
 if (MonthButton.value && YearButton.value) {
     updateChartData();
 }
