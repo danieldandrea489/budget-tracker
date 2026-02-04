@@ -334,8 +334,8 @@ canvas:hover {
 .Income-Expense h2 {
   margin-bottom: 20px;
   margin-top: 0;
-  padding: 20px 24px;                /* adds spacing inside the card */
-  background-color: #f1f3f7;         /* soft card background instead of pure white */
+  padding: 20px 24px;               
+  background-color: #f1f3f7;         
   border: 5px solid #2011c4;
   text-align: center;
   border-radius: 16px;
