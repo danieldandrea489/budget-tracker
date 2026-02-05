@@ -1,4 +1,5 @@
-
+import { db } from './firebase-config.js';
+import { collection, addDoc, getDocs } from "firebase/firestore";
 document.addEventListener('DOMContentLoaded', () => {
     const perPage = 15;
     let page = 0;
