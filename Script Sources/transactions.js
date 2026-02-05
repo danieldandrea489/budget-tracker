@@ -1,3 +1,5 @@
+import { db } from './firebase-config.js';
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Chart, registerables } from 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/+esm';
 Chart.register(...registerables);
 const monthMap = {
