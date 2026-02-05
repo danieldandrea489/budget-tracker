@@ -1,4 +1,5 @@
-
+import { db } from './firebase-config.js';
+import { collection, addDoc, getDocs } from "firebase/firestore";
 document.addEventListener('DOMContentLoaded', () => {
     let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
     let TotalBalance = transactions.length
